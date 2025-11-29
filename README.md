@@ -1,66 +1,81 @@
-# 宝塔面板第三方云端
-这是一个用php开发的宝塔面板第三方云端站点程序。
+# BT Panel Third-Party Cloud Platform
 
-你可以使用此程序搭建属于自己的宝塔面板第三方云端，实现最新版宝塔面板私有化部署，不与宝塔官方接口通信，满足隐私安全合规需求。同时还可以去除面板强制绑定账号，DIY面板功能等。
+This is a BT Panel third-party cloud platform website program developed in PHP.
 
-网站后台管理可一键同步宝塔官方的插件列表与增量更新插件包，还有云端使用记录、IP黑白名单、操作日志、定时任务等功能。
+You can use this program to build your own BT Panel third-party cloud platform, enabling private deployment of the latest BT Panel version, without communicating with the official BT Panel interface, thus meeting privacy, security, and compliance requirements. It also removes the forced account binding of the panel and allows for DIY panel functionality.
 
-本项目自带 **宝塔Linux面板**、**宝塔Windows面板**、**aaPanel面板**、**宝塔云监控** 的最新版安装包和更新包，已修改适配此第三方云端，并且全开源，无.so等加密文件。
+The website backend management can synchronize the official BT Panel plugin list and incremental update plugin packages with one click, and also includes cloud usage records, IP blacklists and whitelists, operation logs, scheduled tasks, and other functions.
 
-觉得该项目不错的可以给个Star~
+This project comes with the latest version installation packages and update packages for **BT Panel Linux**, **BT Panel Windows**, **aaPanel Panel**, and **BT Cloud Monitoring**, modified and adapted for this third-party cloud platform, and is fully open source with no encrypted files such as .so files.
 
-## 声明
+If you like this project, please give it a Star!
 
-1.此项目只能以自用为目的，不得侵犯堡塔公司及其他第三方的知识产权和其他合法权利。
+## Declaration
 
-2.搭建使用此项目必须有一定的编程和Linux运维基础，纯小白不建议使用。
+1. This project is for personal use only and must not infringe upon the intellectual property rights and other legal rights of BT Panel and other third parties.
 
-## 环境要求
+2. Setting up and using this project requires a certain level of programming and Linux system administration knowledge. It is not recommended for complete beginners. ## Environment Requirements
 
 * `PHP` >= 7.4
+
 * `MySQL` >= 5.6
-* `fileinfo`扩展
-* `ZipArchive`扩展
 
-## 部署方法
+* `fileinfo` extension
 
-- [下载最新版的Release包](https://github.com/flucont/btcloud/releases)
-- 如果是下载的源码包，需要执行 `composer install --no-dev` 安装依赖，如果是下载的Release包，则不需要
-- 设置网站运行目录为`public`
-- 设置伪静态为`ThinkPHP`
-- 访问网站，会自动跳转到安装页面，根据提示安装完成
+* `ZipArchive` extension
 
-## 使用方法
+## Deployment Method
 
-- 在`批量替换工具`，执行页面显示的命令，可将bt安装包、更新包和脚本文件里面的`http://www.example.com`批量替换成当前网站的网址。
-- 在`系统基本设置`修改宝塔面板接口设置。你需要准备一个使用官方最新脚本安装并绑定账号的宝塔面板，用于获取最新插件列表及插件包。并根据界面提示安装好专用插件。
-- 在`定时任务设置`执行所显示的命令从宝塔官方获取最新的插件列表并批量下载插件包（增量更新）。当然你也可以去插件列表，一个一个点击下载。
-- 访问网站`/download`查看使用此第三方云端的一键安装脚本。
+- [Download the latest Release package](https://github.com/flucont/btcloud/releases)
 
-## 更新方法
+- If you downloaded the source code package, you need to execute `composer install --no-dev` to install dependencies. If you downloaded the Release package, this is not necessary.
 
-- [下载最新版的Release包](https://github.com/flucont/btcloud/releases)
-- 上传覆盖除data文件夹以外的全部文件
-- 后台使用批量替换工具->获取最新插件列表->修改软件版本设置里面的版本号
+- Set the website's running directory to `public`.
 
-## 其他
+- Set the URL rewriting to `ThinkPHP`.
 
-- [Linux面板官方更新包修改记录](./wiki/update.md)
+- Access the website; it will automatically redirect to the installation page. Follow the prompts to complete the installation.
 
-- [Windows面板官方更新包修改记录](./wiki/updatewin.md)
+## Usage Method
 
-- [aaPanel面板官方更新包修改记录](./wiki/aapanel.md)
+- In the `Batch Replace Tool`, execute the commands displayed on the page to batch replace `http://www.example.com` in BT installation packages, update packages, and script files with the current website's URL.
 
-- [宝塔云监控安装包修改记录](./wiki/btmonitor.md)
+- Modify the BT Panel interface settings in `System Basic Settings`. You will need a BT Panel (or similar panel) that uses the latest official script to install and bind your account. This will be used to obtain the latest plugin list and plugin packages. Follow the on-screen instructions to install the required plugins.
 
-- 宝塔面板官方版与此第三方云端版对比：
+- In the `Scheduled Task Settings`, execute the displayed command to retrieve the latest plugin list from the BT Panel official website and batch download plugin packages (incremental updates). Alternatively, you can go to the plugin list and download each plugin individually.
 
-  |            | 官方版                                                       | 此第三方云端版                                     |
-  | ---------- | ------------------------------------------------------------ | -------------------------------------------------- |
-  | 版本更新   | 支持                                                         | 支持                                               |
-  | 面板广告   | 有广告                                                       | 无广告                                             |
-  | 是否全开源 | 没有全开源                                                   | 全开源                                             |
-  | 资源占用   | 各种统计上报等任务，资源占用略高                             | 去除了很多无用的定时任务，资源占较少               |
-  | 兼容性     | 由于编译的so文件有系统架构限制，兼容的系统仅限已编译的so对应的系统架构 | 由于全开源，没有已编译的so文件，因此无系统架构限制 |
-  
-  
+- Visit the website `/download` to view the one-click installation script using this third-party cloud service.
+
+## Update Method
+
+- [Download the latest Release package](https://github.com/flucont/btcloud/releases)
+
+- Upload and overwrite all files except the data folder
+
+- Use a batch replace tool in the backend -> Get the latest plugin list -> Modify the version number in the software version settings
+
+## Other
+
+- [Linux Panel Official Update Package Modification History](./wiki/update.md)
+
+- [Windows Panel Official Update Package Modification History](./wiki/updatewin.md)
+
+- [aaPanel Panel Official Update Package Modification History](./wiki/aapanel.md)
+
+- [BT Cloud Monitor Installation Package Modification History](./wiki/btmonitor.md)
+
+- Comparison between the official BT Panel version and this third-party cloud version:
+
+| | Official Version | This Third-Party Cloud Version |
+
+| ---------- | ------------------------------------------------------------ | -------------------------------------------------- |
+
+| Version Update | Supported | Supported |
+
+| Panel Ads | Has Ads | No ads |
+
+| Fully open source | Not fully open source | Fully open source |
+
+| Resource consumption | Various statistical reporting tasks result in slightly higher resource consumption | Many unnecessary scheduled tasks have been removed, resulting in lower resource consumption |
+
+| Compatibility | Due to system architecture limitations of compiled .so files, compatibility is limited to the system architecture corresponding to the compiled .so file | As it is fully open source, there are no pre-compiled .so files, therefore there are no system architecture limitations |
